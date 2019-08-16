@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://www.example.edu/fhir/StructureDefinition/PheWASDiagnosticReport" />
+  <name value="PheWASDiagnosis" />
+  <status value="draft" />
+  <fhirVersion value="3.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <contextType value="resource" />
+  <context value="Condition" />
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:pheCodeCount">
+      <path value="Extension.extension" />
+      <sliceName value="pheCodeCount" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:pheCodeCount.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="pheCodeCount" />
+    </element>
+    <element id="Extension.extension:pheCodeCount.value[x]:valueInteger">
+      <path value="Extension.extension.valueInteger" />
+      <sliceName value="valueInteger" />
+      <min value="1" />
+      <type>
+        <code value="integer" />
+      </type>
+    </element>
+    <element id="Extension.extension:pheCode">
+      <path value="Extension.extension" />
+      <sliceName value="pheCode" />
+      <binding>
+        <strength value="required" />
+        <description value="PheWAS ValueSet" />
+        <valueSetReference>
+          <reference value="https://phewascatalog.org/phecodes" />
+        </valueSetReference>
+      </binding>
+    </element>
+    <element id="Extension.extension:pheCode.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="pheCode" />
+    </element>
+    <element id="Extension.extension:pheCode.value[x]:valueCodeableConcept">
+      <path value="Extension.extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+    <element id="Extension.extension:icd9CodeCount">
+      <path value="Extension.extension" />
+      <sliceName value="icd9CodeCount" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:icd9CodeCount.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="icd9CodeCount" />
+    </element>
+    <element id="Extension.extension:icd9CodeCount.value[x]:valueInteger">
+      <path value="Extension.extension.valueInteger" />
+      <sliceName value="valueInteger" />
+      <min value="1" />
+      <type>
+        <code value="integer" />
+      </type>
+    </element>
+    <element id="Extension.extension:icd9Code">
+      <path value="Extension.extension" />
+      <sliceName value="icd9Code" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:icd9Code.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="icd9Code" />
+    </element>
+    <element id="Extension.extension:icd9Code.value[x]:valueCodeableConcept">
+      <path value="Extension.extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
+      <min value="1" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://www.example.edu/fhir/StructureDefinition/PheWASDiagnosticReport" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

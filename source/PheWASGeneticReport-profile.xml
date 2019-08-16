@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://example.org/fhir/StructureDefinition/PheWASGeneticReport" />
+  <name value="PheWASGeneticReport" />
+  <status value="draft" />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Observation" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/observation-genetics" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Observation.extension:DNASequenceVariantName">
+      <path value="Observation.extension" />
+      <sliceName value="DNASequenceVariantName" />
+    </element>
+    <element id="Observation.extension:DNASequenceVariantName.url">
+      <path value="Observation.extension.url" />
+      <fixedUri value="http://hl7.org/fhir/StructureDefinition/observation-geneticsDNASequenceVariantName" />
+    </element>
+    <element id="Observation.extension:DNASequenceVariantName.value[x]">
+      <path value="Observation.extension.value[x]" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+      <type>
+        <code value="Reference" />
+      </type>
+    </element>
+    <element id="Observation.extension:DNASequenceVariantType">
+      <path value="Observation.extension" />
+      <sliceName value="DNASequenceVariantType" />
+    </element>
+    <element id="Observation.extension:DNASequenceVariantType.url">
+      <path value="Observation.extension.url" />
+      <fixedUri value="http://hl7.org/fhir/StructureDefinition/observation-geneticsDNASequenceVariantType" />
+    </element>
+    <element id="Observation.extension:DNASequenceVariantType.value[x]:valueCodeableConcept">
+      <path value="Observation.extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
+      <code>
+        <code value="Disease-relevant genomic alterations" />
+        <display value="Disease-relevant genomic alterations" />
+      </code>
+      <code>
+        <code value="Variants of Unknown Significance" />
+        <display value="Variants of Unknown Significance" />
+      </code>
+      <code>
+        <code value="Disease-relevant genes with no reportable alterations identified" />
+        <display value="Disease-relevant genes with no reportable alterations identified" />
+      </code>
+      <min value="1" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <fixedCodeableConcept>
+        <coding>
+          <code value="Disease-relevant genomic alterations" />
+          <display value="Disease-relevant genomic alterations" />
+        </coding>
+        <coding>
+          <code value="Variants of Unknown Significance" />
+          <display value="Variants of Unknown Significance" />
+        </coding>
+        <coding>
+          <code value="Disease-relevant genes with no reportable alterations identified" />
+          <display value="Disease-relevant genes with no reportable alterations identified" />
+        </coding>
+        <text value="Disease-relevant genomic alterations" />
+      </fixedCodeableConcept>
+    </element>
+    <element id="Observation.extension:GeneSymbol">
+      <path value="Observation.extension" />
+      <sliceName value="GeneSymbol" />
+    </element>
+    <element id="Observation.extension:GeneSymbol.url">
+      <path value="Observation.extension.url" />
+      <fixedUri value="http://hl7.org/fhir/StructureDefinition/observation-geneticsGene" />
+    </element>
+    <element id="Observation.extension:GeneSymbol.value[x]">
+      <path value="Observation.extension.value[x]" />
+      <type>
+        <code value="string" />
+      </type>
+      <type>
+        <code value="Reference" />
+      </type>
+    </element>
+    <element id="Observation.extension:Interpretation">
+      <path value="Observation.extension" />
+      <sliceName value="Interpretation" />
+    </element>
+    <element id="Observation.extension:Interpretation.url">
+      <path value="Observation.extension.url" />
+      <fixedUri value="http://hl7.org/fhir/StructureDefinition/observation-geneticsInterpretation" />
+    </element>
+    <element id="Observation.extension:Interpretation.value[x]">
+      <path value="Observation.extension.value[x]" />
+      <type>
+        <code value="string" />
+      </type>
+      <type>
+        <code value="Reference" />
+      </type>
+    </element>
+    <element id="Observation.issued">
+      <path value="Observation.issued" />
+      <min value="1" />
+    </element>
+  </differential>
+</StructureDefinition>
